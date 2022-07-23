@@ -1,0 +1,23 @@
+.navBar {
+  height: 70px;
+}
+
+.logos img {
+  position: relative;
+  height: 150%;
+  margin-top: -3%;
+}
+
+.contact img {
+  border-radius: 50%;
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.IconLogin img {
+  height: 40px;
+  position: relative;
+  margin-top: -1%;
+  border-radius: 20%;
+}
