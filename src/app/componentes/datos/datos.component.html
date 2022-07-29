@@ -1,1 +1,18 @@
-<p>datos works!</p>
+<div class="datos col-12" style="text-align: center">
+  <h2 id="nombre"><b>MELISA CECILIA SALINAS</b></h2>
+  <h3 id="puesto">Full Stack Developer</h3>
+  <h4 id="ubicacion">Mendoza (Argentina)</h4>
+</div>
+
+<div class="editDatos col-8" style="text-align: right">
+  <div class="editInputs" style="display: none">
+    <input type="text" placeholder="Nombre" id="inputNombre" />
+    <input type="text" placeholder="Puesto" id="inputPuesto" />
+    <input type="text" placeholder="Ubicación" id="inputUbicacion" />
+    <button id="guardar" (click)="guardarCambios()">Guardar</button>
+  </div>
+
+  <button id="editButton" (click)="mostrarInputs()">
+    <i class="fa-regular fa-pen-to-square"></i>
+  </button>
+</div>

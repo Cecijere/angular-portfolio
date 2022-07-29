@@ -1,0 +1,97 @@
+<div class="Educacion" style="padding: 5%">
+  <h2>EDUCACIÓN</h2>
+</div>
+<ul>
+  <li class="educ1 d-flex">
+    <div class="p-2">
+      <img
+        style="width: 50%"
+        src="../../../assets/certificado-AP-1.png"
+        alt="Certificado"
+      />
+      <button><i class="fa-regular fa-pen-to-square"></i></button>
+    </div>
+    <div class="p-2">
+      <h4 id="Institucion">Argentina Programa</h4>
+      <h5 id="cursado">Primera Etapa</h5>
+      <h5 id="título">#Sé Programar</h5>
+      <h6 id="fecha">Octubre-Diciembre, 2021</h6>
+    </div>
+
+    <div class="editEducacion p-2">
+      <div class="editEduc" style="display: none">
+        <input type="text" placeholder="Institucion" id="inputInstitucion" />
+        <input type="text" placeholder="Cursado" id="inputCursado" />
+        <input type="text" placeholder="Titulo" id="inputTitulo" />
+        <input type="text" placeholder="Fecha" id="inputFecha" />
+        <button id="guardar" (click)="guardarCambios()">Guardar</button>
+      </div>
+
+      <button id="editButton" (click)="mostrarInputs()">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
+
+    <div class="deleteDatos p-2">
+      <button>
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+
+  <li class="educ2 d-flex">
+    <div class="p-2">
+      <img
+        style="width: 50%"
+        src="../../../assets/certificado-Algoritmos.png"
+        alt="Certificado"
+      />
+      <button><i class="fa-regular fa-pen-to-square"></i></button>
+    </div>
+
+    <div class="p-2">
+      <h4>Plataforma da Aprendizaje Virtual</h4>
+      <h5>"Algoritmos en Programación"</h5>
+      <h5></h5>
+      <h6>21/06/2022</h6>
+    </div>
+
+    <div class="editDatos p-2">
+      <button>
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
+    <div class="deleteDatos p-2">
+      <button>
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+
+  <li class="educ3 d-flex">
+    <div class="p-2">
+      <img
+        style="width: 50%"
+        src="../../../assets/certificado-AP-1.png"
+        alt="Certificado"
+      />
+      <button><i class="fa-regular fa-pen-to-square"></i></button>
+    </div>
+
+    <div class="p-2">
+      <h4>Argentina Programa</h4>
+      <h5>Segunda Etapa</h5>
+      <h5>"Full Stack Developer Jr."</h5>
+      <h6>Febrero-Agosto, 2022</h6>
+    </div>
+
+    <div class="editDatos p-2">
+      <button><i class="fa-regular fa-pen-to-square"></i></button>
+    </div>
+    <div class="deleteDatos p-2">
+      <button>
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+</ul>

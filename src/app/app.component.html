@@ -2,18 +2,85 @@
 
 <app-banner></app-banner>
 
-<div class="datos col-6">
-  <h2><b>MELISA CECILIA SALINAS</b><br /></h2>
-  <h3>Full Stack Developer<br /></h3>
-  <h4>Mendoza (Argentina)</h4>
-</div>
-<div class="editDatos col-3">
-  <img
-    src="https://th.bing.com/th/id/OIP.nZpGZCcZCgYrK9ihb5HtqQHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.2&pid=1.7"
-    alt="editar"
-  />
-</div>
+<app-datos></app-datos>
 
-<div class="Experiencia">
+<div class="Experiencia col-12" style="padding: 5%">
+  <div class="Titulo col-6"></div>
   <h2>EXPERIENCIA</h2>
 </div>
+<ul>
+  <li class="exp1 d-flex">
+    <div class="editDatos p-2">
+      <button class="button-edit btn btn-light">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
+    <div class="deleteDatos p-2">
+      <button class="button-delete btn btn-light">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+</ul>
+
+<app-educacion></app-educacion>
+
+<div class="Habilidades" style="padding: 5%">
+  <div class="Titulo"></div>
+  <h2>HARD & SOFT SKILL</h2>
+</div>
+
+<div class="Proyectos" style="padding: 5%">
+  <div class="Titulo"></div>
+  <h2>PROYECTOS</h2>
+</div>
+
+<ul>
+  <li class="proyecto1 d-flex">
+    <div class="p-2">
+      <img src="" alt="Imagen de Proyecto" />
+    </div>
+
+    <div class="p-2">
+      <h4>VETERINARIA CUKI</h4>
+      <h5>Desafío Argentina Programa</h5>
+      <h5></h5>
+      <h6>Junio, 2022</h6>
+    </div>
+
+    <div class="editDatos p-2">
+      <button class="button-edit btn btn-light">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
+    <div class="deleteDatos p-2">
+      <button class="button-delete btn btn-light">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+
+  <li class="proyecto2 d-flex">
+    <div class="p-2">
+      <img src="" alt="Imagen de Proyecto" />
+    </div>
+
+    <div class="p-2">
+      <h4>PORTFOLIO</h4>
+      <h5></h5>
+      <h5></h5>
+      <h6>Febrero-Agosto, 2022</h6>
+    </div>
+
+    <div class="editDatos p-2">
+      <button class="button-edit btn btn-light">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+    </div>
+    <div class="deleteDatos p-2">
+      <button class="button-delete btn btn-light">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </li>
+</ul>

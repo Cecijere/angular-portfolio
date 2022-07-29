@@ -1,6 +1,7 @@
 .banner {
-  background: url(https://th.bing.com/th/id/R.978dad5275d744be2602527e8bfbb728?rik=JnL9%2fjpaoVuGFA&pid=ImgRaw&r=0);
+  background: url(../../../assets/banner.jpg);
   background-size: cover;
+  position: relative;
 }
 
 .profile img {
