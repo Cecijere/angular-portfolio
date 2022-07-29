@@ -1,0 +1,22 @@
+.profile {
+  margin-top: -15%;
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+}
+
+.editProfile {
+  float: right;
+}
+
+.datos {
+  padding-top: 20px;
+}
+
+.acercademi {
+  padding-top: 30px;
+}

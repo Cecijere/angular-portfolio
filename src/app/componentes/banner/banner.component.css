@@ -2,12 +2,10 @@
   background: url(../../../assets/banner.jpg);
   background-size: cover;
   position: relative;
+  width: 100%;
+  height: 400px;
 }
 
-.profile img {
-  width: 90%;
-  border-radius: 50%;
-  transform: translateY(50%);
-  position: relative;
-  float: left;
+.editBanner {
+  float: right;
 }
