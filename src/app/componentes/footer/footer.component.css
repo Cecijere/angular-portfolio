@@ -1,0 +1,13 @@
+.row {
+  background-color: darkred;
+}
+
+footer {
+  color: antiquewhite;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer img {
+  width: 30px;
+}
