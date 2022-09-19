@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/service/educacion.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -6,51 +9,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+  educacion: Educacion[] = [];
 
-  constructor() { }
+  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
+  isLogged = false;
 
-  ngOnInit(): void {
-  }
-
-  mostrarInputs() {
-    let inputs = document.getElementsByClassName('editEduc')[0];
-    inputs.setAttribute('style', 'display: block;');
-  }
-
-  ocultarInputs() {
-    document
-      .getElementsByClassName('editEduc')[0]
-      .setAttribute('style', 'display: none');
-  }
-
-  guardarCambios() {
-    let valorInstitucion = (<HTMLInputElement>document.getElementById('inputInstitucion'))
-      .value;
-    let valorCursado = (<HTMLInputElement>document.getElementById('inputCursado'))
-      .value;
-    let valorTitulo = (<HTMLInputElement>(
-      document.getElementById('inputTitulo')
-    )).value;
-    let valorFecha = (<HTMLInputElement>(
-      document.getElementById('inputFecha')
-    )).value;
-
-    if (valorInstitucion != '') {
-      this.reemplazarTexto('institucion', valorInstitucion);
+  ngOnInit(): void { 
+    this.cargarEducacion();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else{
+      this.isLogged = false;
     }
-    if (valorCursado != '') {
-      this.reemplazarTexto('cursado', valorCursado);
-    }
-    if (valorTitulo != '') {
-      this.reemplazarTexto('titulo', valorTitulo);
-    }
-    if (valorFecha != '') {
-      this.reemplazarTexto('titulo', valorFecha);
-    }
-    this.ocultarInputs();
-  }
+ }
 
-  reemplazarTexto(elementId: string, value: string) {
-    document.getElementById(elementId)!.innerHTML = value;
+ cargarEducacion(): void{
+  this.educacionS.lista().subscribe(
+    data =>{
+      this.educacion = data;
+    }
+  )
+ }
+
+ delete(id?: number){
+  if(id != undefined){
+    this.educacionS.delete(id).subscribe(
+      data=>{
+        this.cargarEducacion();
+      }, err => {
+        alert("No se pudo eliminar");
+      }
+    )
   }
+ }
 }

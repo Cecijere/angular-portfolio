@@ -1,80 +1,26 @@
 <div class="Experiencia" style="padding: 5%">
-  <h2>EXPERIENCIA</h2>
+  <h2>EXPERIENCIA LABORAL</h2>
+  <div class="col-lg-2">
+    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">Nueva experiencia</button>
+  </div>
+
+  <div class="col lg-1"></div>
+  <div class="col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Experiencia of expe">
+          <td>
+            <h2>{{Experiencia.nombreE}}</h2>
+          </td>
+          <td>{{Experiencia.descripcionE}}</td>
+          <td *ngIf="isLogged">
+            <button class="btn btn-dark" routerLink="/editexp/{{Experiencia.id}}"><i class="fa-regular fa-pen-to-square"></i></button></td>
+          <td  *ngIf="isLogged">
+            <button (click)="delete(Experiencia.id)"><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
-<ul>
-  <li class="exp1">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <img
-            class="img-fluid"
-            style="width: 100%"
-            src="../../../assets/certificado-AP-1.png"
-            alt="Proyecto"
-          />
-
-          <button>
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-        </div>
-
-        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
-          <h4 id="lugar">Lugar</h4>
-          <h5 id="puesto">Puesto</h5>
-          <h6 id="descripcion">descripcion</h6>
-          <h6 id="fecha">fecha</h6>
-        </div>
-
-        <div class="editExperiencia col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button>
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-        </div>
-
-        <div class="deleteDatos col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button>
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </li>
-
-  <li class="exp2">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <img
-            class="img-fluid"
-            style="width: 100%"
-            src="../../../assets/certificado-Algoritmos.png"
-            alt="Proyecto"
-          />
-
-          <button>
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-        </div>
-
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-          <h4 id="lugar">Lugar</h4>
-          <h5 id="puesto">Puesto</h5>
-          <h6 id="descripcion">descripcion</h6>
-          <h6 id="fecha">fecha</h6>
-        </div>
-
-        <div class="editExperiencia col-xs-12 col-sm-1 col-md-1 col-lg-1">
-          <button>
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-        </div>
-
-        <div class="deleteDatos col-xs-12 col-sm-1 col-md-1 col-lg-1">
-          <button>
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </li>
-</ul>
