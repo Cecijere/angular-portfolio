@@ -2,157 +2,27 @@
   <div class="Titulo"></div>
   <h2>HARD & SOFT SKILL</h2>
 </div>
-
+<div class="col-lg-2">
+  <button type="button" class="btn btn-dark" routerLink="/nuevahabilidad" *ngIf="isLogged">Agregar Habilidad</button>
+</div>
 <div class="row">
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
+  <div class="text-center col-sm-4 col-md-3 col-lg-3 circulo" *ngForm="let hardysoft of hardysoft">
+    <circle-progress [percent]="(hardysoft.porcentaje)" [radius]="50" [outerStrokeWidth]="10" [innerStrokeWidth]="5"
+      [outerStrokeColor]="'red'" [innerStrokeColor]="'darkred'" [animation]="true" [animationDuration]="600"
+      [title]="(hardysoft.nombre)" [titleFontSize]="'20'" [showTitle]="true" [titleColor]="'black'"
+      [showSubtitle]="false" [showUnits]="false"></circle-progress>
 
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'CSS'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
+    <div>
+      <td *ngIf="isLogged">
+        <button class="btn btn-dark" routerLink="/edithardysoft/{{hardysoft.id}}"><i
+            class="fa-regular fa-pen-to-square"></i></button>
+      </td>
+      <td *ngIf="isLogged">
+        <button (click)="delete(hardysoft.id)"><i class="fa-solid fa-trash-can"></i></button>
+      </td>
+    </div>
 
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'JavaScript'"
-      [titleFontSize]="'15'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
 
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
 
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
-
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
-
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
-  </div>
-
-  <div class="text-center col-sm-4 col-md-3 col-lg-3">
-    <circle-progress
-      [percent]="85"
-      [radius]="50"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="5"
-      [outerStrokeColor]="'red'"
-      [innerStrokeColor]="'darkred'"
-      [animation]="true"
-      [animationDuration]="600"
-      [title]="'HTML'"
-      [titleFontSize]="'20'"
-      [showTitle]="true"
-      [titleColor]="'black'"
-      [showSubtitle]="false"
-      [showUnits]="false"
-    ></circle-progress>
   </div>
 </div>
