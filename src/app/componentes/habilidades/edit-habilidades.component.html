@@ -1,20 +1,23 @@
-<div class="container" *ngIf="hardysoft">
+<div class="container" *ngIf="habilidades">
     <div class="row">
         <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f= "ngForm">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombre">Habilidad</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="hardysoft.nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="habilidades.nombre"
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="porcentaje">Porcentaje de habilidad</label>
-                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="hardysoft.porcentaje" required>
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje"
+                        [(ngModel)]="habilidades.porcentaje" required>
                 </div>
-                <button class="btn btn-black">Editar habilidad
-                </button>
+                <div class="button">
+                    <button class="btn btn-black">Guardar
+                    </button>
+                </div>
             </form>
 
         </div>
     </div>
 </div>
-

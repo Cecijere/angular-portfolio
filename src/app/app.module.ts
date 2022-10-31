@@ -10,9 +10,9 @@ import { DatosComponent } from './componentes/datos/datos.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -23,6 +23,12 @@ import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion
 import { EditEducacionComponent } from './componentes/educacion/edit-educacion.component';
 import { EditHabilidadesComponent } from './componentes/habilidades/edit-habilidades.component';
 import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilidad.component';
+import { EditDatosComponent } from './componentes/datos/edit-datos.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.component';
+import { EditProyectoComponent } from './componentes/proyectos/edit-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +39,8 @@ import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilid
     EducacionComponent,
     ExperienciaComponent,
     ProyectosComponent,
-    HabilidadesComponent,
     FooterComponent,
+    HabilidadesComponent,
     HomeComponent,
     LoginComponent,
     NuevaExperienciaComponent,
@@ -43,6 +49,10 @@ import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilid
     EditEducacionComponent,
     EditHabilidadesComponent,
     NuevaHabilidadComponent,
+    EditEducacionComponent,
+    EditDatosComponent,
+    NuevoProyectoComponent,
+    EditProyectoComponent,
   ],
   
   imports: [
@@ -52,6 +62,8 @@ import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilid
     FormsModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     
   ],
   providers: [

@@ -1,31 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="profile img-fluid col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <img src="../../../assets/profile.jpg" />
-      <div class="editProfile">
-        <button><i class="fa-regular fa-pen-to-square"></i></button>
-      </div>
-    </div>
-    <div
-      class="datos col-xs-12 col-sm-8 col-md-8 col-lg-8"
-      style="text-align: center"
-    >
-      <h2 id="nombre"><b>{{persona.nombre}} {{persona.apellido}} </b></h2>
-      <h3 id="puesto">Full Stack Developer</h3>
-      <h4 id="ubicacion">Mendoza (Argentina)</h4>
-
-        <button id="editButton">
-          <i class="fa-regular fa-pen-to-square"></i>
-        </button>
-      </div>
-    </div>
+<div class="row">
+  <div>
+    <button type="button" class="btn btn-dark" routerLink="/edit-datos/1" *ngIf="isLogged"><i class="fa-regular fa-pen-to-square"></i></button>
+  </div>
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+    <img src="{{persona.imgprofile || '../../../../../assets/profile.jpg'}}" class="img-fluid" id="imgprofile" />
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <h2 id="nombre"><b>{{persona.nombre}} {{persona.apellido}} </b></h2>
+    <h3 id="puesto">Full Stack Developer</h3>
   </div>
 
-  <div class="acercademi" style="text-align: center">
-    <h2>Acerca de mí...</h2>
-    <p>Aqui va un parrafo con mas informacion sobre mi</p>
-    <div class="editAcercademi">
-      <button><i class="fa-regular fa-pen-to-square"></i></button>
-    </div>
+  <div class="descripcion col-xs-12 col-sm-7 col-md-7 col-lg-7 ">
+    <span>
+      <h3><b>Acerca de mí...</b></h3>
+      <p>{{persona.descripcion}}</p>
+    </span>
   </div>
-
+</div>

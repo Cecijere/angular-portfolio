@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Hardysoft } from 'src/app/model/hardysoft';
-import { HardysoftService } from 'src/app/service/hardysoft.service';
+import { Habilidades } from 'src/app/model/habilidades';
+import { HabilidadesService } from 'src/app/service/habilidades.service';
 
 @Component({
   selector: 'app-edit-habilidades',
@@ -9,15 +9,15 @@ import { HardysoftService } from 'src/app/service/hardysoft.service';
   styleUrls: ['./edit-habilidades.component.css']
 })
 export class EditHabilidadesComponent implements OnInit {
-  hardysoft: Hardysoft = null;
+  habilidades: Habilidades = null;
 
-  constructor(private hardysoftS: HardysoftService, private activatedRouter: ActivatedRoute, private router: Router) { }
+  constructor(private habilidadesS: HabilidadesService, private activatedRouter: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.hardysoftS.detail(id).subscribe(
+    this.habilidadesS.detail(id).subscribe(
       data => {
-        this.hardysoft = data;
+        this.habilidades = data;
       }, err => {
         alert("No se pudo modificar");
         this.router.navigate(['']);
@@ -27,7 +27,7 @@ export class EditHabilidadesComponent implements OnInit {
 
   onUpdate(){
     const id = this.activatedRouter.snapshot.params['id'];
-    this.hardysoftS.update(id,this.hardysoft).subscribe(
+    this.habilidadesS.update(id,this.habilidades).subscribe(
       data => {
         this.router.navigate(['']);
       }, err => {

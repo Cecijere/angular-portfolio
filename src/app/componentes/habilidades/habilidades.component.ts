@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hardysoft } from 'src/app/model/hardysoft';
-import { HardysoftService } from 'src/app/service/hardysoft.service';
+import { Habilidades } from 'src/app/model/habilidades';
+import { HabilidadesService } from 'src/app/service/habilidades.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -9,13 +9,13 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  hardysoft: Hardysoft[] = [];
+  habilidades: Habilidades[] = [];
 
-  constructor(private hardysoftS: HardysoftService, private tokenService: TokenService) { }
+  constructor(private habilidadesS: HabilidadesService, private tokenService: TokenService) { }
   isLogged = false;
 
   ngOnInit(): void {
-    this.cargarHardysoft();
+    this.cargarHabilidades();
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else{
@@ -23,19 +23,19 @@ export class HabilidadesComponent implements OnInit {
     }
   }
 
-  cargarHardysoft(): void {
-    this.hardysoftS.lista().subscribe(
+  cargarHabilidades(): void {
+    this.habilidadesS.lista().subscribe(
       data => {
-        this.hardysoft = data;
+        this.habilidades = data;
       }
     )
   }
 
   delete(id: number){
     if(id != undefined){
-      this.hardysoftS.delete(id).subscribe(
+      this.habilidadesS.delete(id).subscribe(
         data => {
-          this.cargarHardysoft();
+          this.cargarHabilidades();
         }, err => {
           alert ("No se pudo eliminar");
         }
